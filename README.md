@@ -34,10 +34,10 @@ npm run dev
 
 Por padrão, o ambiente de desenvolvimento é acessado em `http://localhost:3000`.
 
-**Limitações:** as operações dependem da API e de integrações e autenticação configuradas em ambiente próprio. Não foi validada nesta revisão a execução ponta a ponta fora do ambiente original. Use dados sintéticos e nunca reutilize credenciais antigas.
+**Pré-requisitos para demonstração:** API de processamento, autenticação configurada e arquivos de exemplo. A interface depende desses componentes para executar o fluxo completo.
 
 ## Competências demonstradas
 
 Integração frontend/backend, construção de interfaces operacionais e organização de fluxos de processamento.
 
-**Status:** implementação histórica, ainda não validada como sistema independente.
+**Status:** interface documentada; demonstração integral depende dos serviços associados.
