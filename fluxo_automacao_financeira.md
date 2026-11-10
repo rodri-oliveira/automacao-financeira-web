@@ -103,7 +103,7 @@ flowchart TB
 **Legenda:**  
 - Verificação de Email: Via **Power Automate** (URL: prod-56.westus.logic.azure.com)
 - "Base de Dados" = Pastas específicas `/R189`, `/QPE`, `/SPB`, `/NFSERV`
-- "Arquivo Contratos" = `/teams/BR-TI-TIN/contratos/`
+- "Arquivo Contratos" = `/sites/portfolio/contratos/`
 
 ## Detalhamento das Etapas
 
