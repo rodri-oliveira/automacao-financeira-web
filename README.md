@@ -1,29 +1,43 @@
-This is a [Next.js](https://nextjs.com/) project bootstrapped with [Developers Portal](https://developers-portal.weg.net/).
+# Automação Financeira — Interface Web
 
-## Getting Started
+Frontend desenvolvido com **Next.js e React** para operar um fluxo de processamento e validação de arquivos por meio de uma API.
 
-First, to run in development you may need to create a `.env.development` file in the root of the project.
+## Problema e solução
 
-This `.env.development` file should contain the given variables:
+Scripts de extração e conferência precisam de uma interface que permita ao operador iniciar processos e acompanhar suas etapas. Esta aplicação fornece a camada visual da automação financeira.
 
-|Name|Description|Example|
-|-|-|-|
-|AUTH_KEYCLOAK_ID|The [client_id](https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/) for the given application|`app_client_id`|
-|AUTH_KEYCLOAK_SECRET|The [client_secret](https://www.oauth.com/oauth2-servers/client-registration/client-id-secret/) for the given application|`app_client_secret`|
-|AUTH_SECRET|A random hash that will be used as a key to encrypt auth info inside the server|`i$Q1"P"16"gY]_8jyu}5`|
-|AUTH_KEYCLOAK_ISSUER|The [iss](https://datatracker.ietf.org/doc/html/rfc7519#section-4.1.1) value that will be asserted|`https://auth-qa.weg.net`|
+## Componentes e funcionalidades identificados
 
+- Tela principal com componente de automação financeira.
+- Ações de processamento por chamadas ao backend.
+- Estrutura de autenticação e sessão.
+- Rota de encaminhamento das solicitações à API.
+- Componentes React para interação e apresentação de operações.
 
-run the development server:
+O fluxo documentado para a solução inclui organização, extração, consolidação e validação de relatórios. Essas etapas são executadas ou apoiadas pelos módulos de backend.
+
+## Tecnologias
+
+**Next.js 14 · React 18 · JavaScript/TypeScript · Material UI · NextAuth**
+
+A interface está organizada nos diretórios `app/` e `components/`.
+
+**API associada:** [Automação Financeira — Backend](https://github.com/rodri-oliveira/automacao-financeira-api).  
+**Versão desktop relacionada:** [Automação Financeira — Desktop](https://github.com/rodri-oliveira/automacao-financeira-desktop).
+
+## Execução local
 
 ```bash
+npm install
 npm run dev
 ```
 
-Access [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Por padrão, o ambiente de desenvolvimento é acessado em `http://localhost:3000`.
 
-## Learn More
+**Limitações:** as operações dependem da API e de integrações e autenticação configuradas em ambiente próprio. Não foi validada nesta revisão a execução ponta a ponta fora do ambiente original. Use dados sintéticos e nunca reutilize credenciais antigas.
 
-To leare more about Next.js, take a look at the following resources:
+## Competências demonstradas
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+Integração frontend/backend, construção de interfaces operacionais e organização de fluxos de processamento.
+
+**Status:** implementação histórica, ainda não validada como sistema independente.
