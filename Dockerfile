@@ -1,16 +1,13 @@
-FROM registry-docker.weg.net/node:20 AS base
+FROM node:20 AS base
 
 FROM base AS deps
 
 ARG NODE_VERSION
-ARG NEXUS_USERNAME
-ARG NEXUS_PASSWORD
 
 WORKDIR /app
 
 COPY . .
 
-RUN npm config set //nexus3.weg.net/repository/npm-group/:_auth $(echo -n "$NEXUS_USERNAME:$NEXUS_PASSWORD" | openssl base64)
 
 RUN npm ci
 
