@@ -21,7 +21,6 @@ jobs:
         env:
           BRANCH_NAME: ${{ github.ref_name }}
           REPO_NAME: ${{ github.repository }}
-          GITHUB_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           set -euo pipefail
@@ -46,6 +45,5 @@ jobs:
           git rm --quiet .github/workflows/history-maintenance.yml
           git commit -q -m "chore: update repository maintenance baseline"
           git remote add origin "https://github.com/${REPO_NAME}.git" 2>/dev/null || git remote set-url origin "https://github.com/${REPO_NAME}.git"
-          git -c http.https://github.com/.extraheader="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GITHUB_TOKEN" | base64 -w 0)" \
-            push --force-with-lease="refs/heads/${BRANCH_NAME}:${ORIGINAL_HEAD}" origin "HEAD:refs/heads/${BRANCH_NAME}"
+          git push --force-with-lease="refs/heads/${BRANCH_NAME}:${ORIGINAL_HEAD}" origin "HEAD:refs/heads/${BRANCH_NAME}"
           echo "History maintenance completed."
